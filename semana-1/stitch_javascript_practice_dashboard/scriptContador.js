@@ -20,14 +20,12 @@ function remove(){
     contadorTextSpan.textContent--
 }
 
-function reset(){
-    contadorTextSpan.textContent = 0
-
-}
 
 //---listeners-------------------------
 
 btnAddContador.addEventListener("click",add);
 btnRemoveContador.addEventListener("click",remove)
-btnResetContador.addEventListener("click",reset)
+btnResetContador.addEventListener("click", ()=>{
+     contadorTextSpan.textContent = 0
+})
 //------------------------------------------
