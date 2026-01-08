@@ -159,28 +159,31 @@
 <h3 class="font-bold text-lg text-[#111418] dark:text-white flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">checklist</span> Task Manager
                             </h3>
-<span class="text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2 py-1 rounded-full text-gray-500 dark:text-gray-300">3 Pending</span>
+<span class="text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2 py-1 rounded-full text-gray-500 dark:text-gray-300"><span id="contadorTask" >3</span> Pending</span>
 </div>
 <div class="p-5 flex flex-col gap-4">
 <div class="flex gap-2">
-<input class="flex-1 h-10 rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] px-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white" placeholder="Add a new task..." type="text"/>
-<button class="h-10 px-6 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-sm transition-colors flex items-center">
+<input id="addTaskInput" class="flex-1 h-10 rounded-lg border border-[#dbe0e6] dark:border-gray-600 bg-white dark:bg-[#101922] px-3 text-sm placeholder:text-[#617589] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white" placeholder="Add a new task..." type="text"/>
+<button id="btnAddTask" class="h-10 px-6 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold shadow-sm transition-colors flex items-center">
 <span class="material-symbols-outlined text-[20px] mr-1">add_circle</span> Add
                                 </button>
 </div>
-<div class="flex flex-col gap-2 max-h-[180px] overflow-y-auto pr-1 logger-scroll">
+<div id ="taskContainerDiv" class="flex flex-col gap-2 max-h-[180px] overflow-y-auto pr-1 logger-scroll">
 <!-- Task Item -->
 <div class="flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item">
 <div class="flex items-center gap-3">
 <div class="size-5 rounded border border-gray-300 dark:border-gray-600 flex items-center justify-center cursor-pointer hover:border-primary"></div>
+
+
+
 <span class="text-sm text-[#111418] dark:text-gray-200">Review DOM Manipulation documentation</span>
 </div>
-<button class="text-gray-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity">
+<button class=" addTaskInput text-gray-400 hover:text-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity">
 <span class="material-symbols-outlined text-[20px]">delete</span>
 </button>
 </div>
 <!-- Task Item -->
-<div class="flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item">
+<div id ="templateCardTask" class="flex items-center justify-between p-3 rounded-lg border border-[#f0f2f4] dark:border-gray-700 bg-white dark:bg-[#101922] hover:border-primary/50 transition-colors group/item">
 <div class="flex items-center gap-3">
 <div class="size-5 rounded border border-gray-300 dark:border-gray-600 flex items-center justify-center cursor-pointer hover:border-primary"></div>
 <span class="text-sm text-[#111418] dark:text-gray-200">Practice array methods (map, filter, reduce)</span>
@@ -203,6 +206,7 @@
 </div>
 </div>
 </div>
+<script src="taskManager.js"></script>
 </div>
 <!-- Card 5: Theme Toggle Demo -->
 <div class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-transparent dark:border-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300">
